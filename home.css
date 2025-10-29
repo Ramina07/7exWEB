@@ -1,0 +1,856 @@
+/* === Базовые стили === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background: #fafafa;
+  color: #333;
+}
+/*Multi steps*/
+
+
+.multi-step-form {
+  background-color: #fff8f0;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 30px auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+.multi-step-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+
+.multi-step-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.multi-step-form .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.multi-step-form button {
+  padding: 8px 20px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.multi-step-form button:hover {
+  background-color: #ff3b2e;
+}
+
+
+
+
+/*Restaurant info changes*/
+.restaurant-info {
+  text-align: center;
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 700px;
+  background: #fff5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.restaurant-info p{
+  padding: 0 10px
+}
+
+
+#restaurantText {
+  transition: color 0.5s, opacity 0.5s;
+  opacity: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+
+#infoBtn {
+  margin-top: 15px;
+  padding: 14px 30px;
+  font-size: 1.2rem;
+  border: none;
+   border-radius: 10px;
+  background-color: #b22222;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+
+#infoBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+ 
+}
+
+
+
+
+/*==Likes==*/
+.like-box {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+
+.heart {
+  cursor: pointer;
+  font-size: 24px;
+  transition: color 0.3s;
+  color: #aaa;
+}
+
+
+.heart.liked {
+  color: red;
+}
+
+
+
+
+
+
+
+
+/*==datetime==*/
+.datetime {
+  font-size: 0.9rem;
+  color: #555;
+  background: #fff0f0;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+
+
+
+.datetime {
+  font-size: 14px;
+  color: #444;
+  margin-left: 15px;
+}
+
+/* ===========================
+   POPUP STYLING
+=========================== */
+/* Popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+
+.popup-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 300px;
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.error-box {
+  color: red;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+
+.bg-btn, .open-popup {
+  margin: 15px;
+  padding: 10px 20px;
+  background-color: #e8b4b8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.popup {
+  display: none; /* скрыта по умолчанию */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* затемнённый фон */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px 40px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.popup-content input:focus {
+  outline: none;
+  border-color: #8B0000;
+  box-shadow: 0 0 8px rgba(139,0,0,0.3);
+}
+
+.popup-content button[type="submit"] {
+  background-color: #8B0000;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup-content button[type="submit"]:hover {
+  background-color: #b22222;
+}
+
+.popup-content .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.popup-content .close:hover {
+  color: #8B0000;
+}
+
+.error-box {
+  color: #b22222;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  min-height: 20px;
+  text-align: left;
+}
+
+
+
+
+/*===Media queries===*/
+@media (max-width: 1024px){
+    .hero, .story{
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-left, .story img{
+        width:100%
+    }
+}
+
+
+@media (max-width: 760px){
+    nav ul{
+        flex-direction: column;
+        gap:10px;
+    }
+    .dish-grid, .chef-grid{
+        grid-template-columns: 1fr 1 fr;
+    }
+    .hero-left h1{
+        font-size:2rem;
+    }
+}
+
+
+@media(max-width:480px){
+    .dish-grid, .chef-grid{
+        grid-template-columns: 1fr;
+    }
+    .hero-left p, .story p{
+        font-size: 1rem;
+    }
+}
+/* === Основной контейнер === */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 20px;
+  padding: 20px;
+}
+
+
+/* === Header === */
+.header {
+  grid-area: header;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* === Sidebar === */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 80px;
+}
+
+
+.sidebar h3 {
+  font-size: 1.5rem;
+  color: #b22222;
+  margin-bottom: 20px;
+}
+
+
+.sidebar ul {
+  list-style: none;
+}
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+
+.sidebar ul li a:hover {
+  color: #b22222;
+}
+
+
+/* === Navigation === */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b22222;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #b22222;
+}
+
+
+/* === Main === */
+.main-container {
+  grid-area: main;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* === Hero Section === */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  gap: 40px;
+  background: linear-gradient(135deg, #fff, #fff5f5);
+  border-bottom: 4px solid #b22222;
+}
+
+
+.hero-left h1 {
+  font-size: 2.5rem;
+  color: #b22222;
+}
+
+
+.hero-left p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+
+.hero-bowl-wrapper {
+  max-width: 350px;
+  animation: spin 12s linear infinite;
+  }
+
+
+.hero-bowl {
+  width: 100%;
+  height: auto;
+}
+
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+/* === Story Section === */
+.story {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 10%;
+  background: linear-gradient(135deg, #fff5f5, #ffeaea);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  margin: 50px 10%;
+}
+
+
+.story img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+.story h2 {
+  color: #b22222;
+  margin-bottom: 15px;
+}
+
+
+/* === Season Specials === */
+.new-dishes h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 30px;
+  }
+
+
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px 10%;
+}
+
+
+.dish-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.dish-card:hover {
+  transform: translateY(-6px);
+}
+
+
+.dish-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+
+.dish-card:hover img {
+  transform: scale(1.05);
+}
+
+
+.overlay {
+  position: absolute;
+  inset: 0;
+ /*background: rgba(219, 127, 127, 0.6);*/
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+
+.dish-card:hover .overlay {
+  opacity: 1;
+}
+
+
+/* === Chefs === */
+.chefs h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 30px;
+}
+
+
+.chef-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px 10%;
+}
+
+
+.chef-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.chef-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+.chef-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #b22222;
+}
+
+
+/* === Footer === */
+.footer {
+  grid-area: footer;
+  background: #b22222;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* === Scroll Progress Bar === */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 0%;
+  background: linear-gradient(90deg, #ff4d4d, #b22222);
+  box-shadow: 0 2px 5px rgba(255, 77, 77, 0.4);
+  z-index: 9999;
+  transition: width 0.2s ease-out;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 36px;
+  color: #b22222;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.stat-item p {
+  color: #555;
+  font-size: 16px;
+}
+
+
+/* === Stats Section === */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 40px;
+  color: #b22222;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.stat-item p {
+  color: #555;
+  font-size: 16px;
+}
+
+/* 🔹 Spinner style */
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #ff4b4b;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 🔹 Toast notification style */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #333;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s, bottom 0.5s;
+  font-size: 15px;
+  z-index: 9999;
+}
+
+#toast.show {
+  opacity: 1;
+  bottom: 50px;
+}
+/* 🏞️ Restaurant Gallery */
+.restaurant-gallery {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #fff8f8;
+}
+
+.restaurant-gallery h2 {
+  color: #b22222;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery-container img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.promo-sidebar {
+  background: #fff0f3;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.promo-sidebar h3 {
+  color: #e63946;
+  margin-bottom: 10px;
+}
+
+.promo-item {
+  background: #ffe4e9;
+  border-radius: 10px;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.promo-code {
+  font-weight: bold;
+  color: #e63946;
+}
+
+.copy-btn {
+  display: inline-block;
+  margin-top: 6px;
+  background: linear-gradient(135deg, #ff4d4d, #b22222);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(255, 77, 77, 0.3);
+}
+
+.copy-btn:hover {
+  background: linear-gradient(135deg, #ff6666, #ff1a1a);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(255, 77, 77, 0.4);
+}
+
+.copy-btn:active {
+  transform: scale(0.97);
+}
+
+/* Когда код скопирован */
+.copy-btn.copied {
+  background: linear-gradient(135deg, #28a745, #218838);
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.4);
+}
+
+.copy-btn.copied:hover {
+  background: linear-gradient(135deg, #34c759, #2e8b57);
+}
+
+
+#copyTooltip {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.lazy {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.lazy[src] {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
